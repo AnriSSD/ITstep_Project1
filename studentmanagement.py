@@ -18,6 +18,14 @@ class StudentManagementSystem:
         self.students = []
 
     def add_student(self, name, roll_number, grade):
+        try:
+            grade = int(grade)
+            if grade < 0 or grade > 100:
+                raise ValueError("Grade must be between 0 and 100")
+        except ValueError as e:
+            print(f"Invalid input: {e}")
+            return
+
         student = Student(name, roll_number, grade)
         self.students.append(student)
         self.save_to_file()

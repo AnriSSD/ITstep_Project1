@@ -1,7 +1,12 @@
 [
     {
         "name": "Anri",
-        "roll_number": "Galustovi",
-        "grade": "3"
+        "roll_number": "10",
+        "grade": "93"
+    },
+    {
+        "name": "Paata",
+        "roll_number": "10",
+        "grade": 98
     }
 ]
