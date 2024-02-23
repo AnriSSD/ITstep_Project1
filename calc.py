@@ -50,21 +50,25 @@ def main():
             break
         elif user_input in ("+", "-", "*", "/"):
             # Ask the user for input if a valid operation is selected.
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            try:
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+            except ValueError:
+                print("Unknown input")
+                continue
 
             # Perform the operation and display the result.
-            if user_input == "+":
-                print(f"The result is: {calculator.add(num1, num2)}")
-            elif user_input == "-":
-                print(f"The result is: {calculator.subtract(num1, num2)}")
-            elif user_input == "*":
-                print(f"The result is: {calculator.multiply(num1, num2)}")
-            elif user_input == "/":
-                try:
+            try:
+                if user_input == "+":
+                    print(f"The result is: {calculator.add(num1, num2)}")
+                elif user_input == "-":
+                    print(f"The result is: {calculator.subtract(num1, num2)}")
+                elif user_input == "*":
+                    print(f"The result is: {calculator.multiply(num1, num2)}")
+                elif user_input == "/":
                     print(f"The result is: {calculator.divide(num1, num2)}")
-                except ValueError as e:
-                    print(e)
+            except ValueError as e:
+                print(e)
         else:
             # Inform the user of unknown input.
             print("Unknown input")
